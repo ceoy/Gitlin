@@ -31,11 +31,26 @@ dependencies {
 
     // Use the Kotlin JUnit integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
+
+    // Speck for testing
+    testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.1")
+    testRuntimeOnly("org.spekframework.spek2:spek-runner-junit5:2.0.1")
+
+    // spek requires kotlin-reflect, can be omitted if already in the classpath
+    testRuntimeOnly("org.jetbrains.kotlin:kotlin-reflect")
 }
 
 application {
     // Define the main class for the application.
-    mainClassName = "ch.tim.AppKt"
+    mainClassName = "ch.tim.Gitlin"
+}
+
+tasks {
+    test {
+        useJUnitPlatform {
+            includeEngines = setOf("spek2")
+        }
+    }
 }
 
 
@@ -44,6 +59,6 @@ ktlint {
 
     filter {
         // exclude tests
-        exclude("**/*Test.kt")
+        exclude("**/*Spec.kt")
     }
 }
