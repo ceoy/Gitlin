@@ -3,6 +3,7 @@
  *
  * This generated file contains a sample Kotlin application project to get you started.
  */
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
 plugins {
@@ -25,6 +26,8 @@ repositories {
 dependencies {
     // Use the Kotlin JDK 8 standard library.
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    implementation("com.github.ajalt:clikt:1.6.0")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")
@@ -50,6 +53,12 @@ tasks {
         useJUnitPlatform {
             includeEngines = setOf("spek2")
         }
+    }
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class.java) {
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 
