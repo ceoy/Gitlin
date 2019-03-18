@@ -23,7 +23,7 @@ object Gitlin {
     }
 
     private fun init() {
-        println("Init")
+        println("Initialized empty Gitlin repository in .gitlin/")
     }
 
     private fun help() {

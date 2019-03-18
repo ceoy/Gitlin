@@ -42,7 +42,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClassName = "ch.tim.Gitlin"
+    mainClassName = "ch.tim.GitlinKt"
 }
 
 tasks {
