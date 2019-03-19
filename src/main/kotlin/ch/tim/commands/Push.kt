@@ -1,4 +1,4 @@
-package ch.tim
+package ch.tim.commands
 
 import com.github.ajalt.clikt.core.CliktCommand
 

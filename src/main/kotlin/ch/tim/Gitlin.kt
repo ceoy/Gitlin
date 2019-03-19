@@ -1,5 +1,9 @@
 package ch.tim
 
+import ch.tim.commands.Add
+import ch.tim.commands.Init
+import ch.tim.commands.Push
+import ch.tim.commands.Rm
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.core.subcommands
 import com.github.ajalt.clikt.parameters.options.versionOption
