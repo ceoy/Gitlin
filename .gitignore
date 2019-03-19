@@ -99,4 +99,7 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
-# End of https://www.gitignore.io/api/kotlin,gradle,intellij
+### Gitlin ###
+.gitlin
+
+# End of https://www.gitignore.io/api/kotlin,gradle,intellij,gitlin
