@@ -10,3 +10,13 @@ In order to run checks, use this command.
 `./gradlew check`
 
 This will ignore Spec files.
+
+## Installing
+
+Hint: If you want to compile the project yourself, run `./gradlew assembleDist`.
+
+Unzip the .zip file, put it somewhere and add `gitlin/bin` to your PATH.
+
+## Running
+
+In order to run Gitlin, make sure `gitlin/bin` is in your PATH, then run `gitlin -h` (or `gitlin.bat -h` for more information.

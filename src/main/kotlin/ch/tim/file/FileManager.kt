@@ -14,30 +14,29 @@ object FileManager {
      * Returns the Path to the .gitlin folder, or throws an exception if it is not a .gitlin project
      */
     @Throws(IllegalStateException::class)
-    fun pathToGitlin(currentPath: String): String {
+    fun absolutePathToGitlin(currentPath: String): String {
         val gitlinFolderPath = currentPath + GITLIN_FOLDER
         val gitlinFolder = File(gitlinFolderPath)
-        println(gitlinFolderPath)
 
         return if (gitlinFolder.exists()) {
             gitlinFolderPath
         } else {
-            val newPath = "$currentPath/../"
-            println(newPath)
+            val currentPathDirectory = File(currentPath).absolutePath.replaceAfterLast('/', "")
 
-            val parent = File(newPath)
-            // println(parent)
-            if (parent.exists() && parent.path != "/") {
-                pathToGitlin(parent.path)
+            if (currentPathDirectory != "/") {
+                absolutePathToGitlin(currentPathDirectory)
             } else {
                 throw IllegalStateException("gitlin not found")
             }
         }
     }
 
+    /**
+     * Checks if the current directory is already a gitlin repository
+     */
     fun isGitlin(): Boolean {
         return try {
-            pathToGitlin("./")
+            absolutePathToGitlin("./")
             true
         } catch (e: IllegalStateException) {
             false
