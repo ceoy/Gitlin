@@ -1,0 +1,11 @@
+# Test for * operation
+*.txt
+
+# test for specific file name
+halloWelt.js
+
+# Test for whatever this shit is
+hello
+
+# Test for folder
+welt/

@@ -1,19 +1,23 @@
 package ch.tim.commands
 
-import ch.tim.file.FileManager
-import ch.tim.file.FileManager.GITLIN_FOLDER
-import ch.tim.file.FileManager.HEAD_FILE
-import ch.tim.file.FileManager.HEAD_FOLDER
-import ch.tim.file.FileManager.OBJECT_FOLDER
-import ch.tim.file.FileManager.REF_FOLDER
+import ch.tim.common.FileSystem
+import ch.tim.common.FileSystem.GITLIN_FOLDER
+import ch.tim.common.FileSystem.HEAD_FILE
+import ch.tim.common.FileSystem.HEAD_FOLDER
+import ch.tim.common.FileSystem.OBJECT_FOLDER
+import ch.tim.common.FileSystem.REF_FOLDER
+import ch.tim.common.Logger
 import com.github.ajalt.clikt.core.CliktCommand
 import java.io.File
 
+/**
+ * Initializes
+ */
 class Init : CliktCommand(help = "Creates an empty Gitlin repository") {
 
     override fun run() {
-        if (FileManager.isGitlin()) {
-            println("Already Initialized")
+        if (FileSystem.isGitlin()) {
+            Logger.info("Already Initialized")
             return
         }
 
@@ -32,6 +36,6 @@ class Init : CliktCommand(help = "Creates an empty Gitlin repository") {
         // create heads folder
         File("$GITLIN_FOLDER/$REF_FOLDER/$HEAD_FOLDER/").mkdirs()
 
-        println("Initialized empty Gitlin repository in .gitlin/")
+        Logger.info("Initialized empty Gitlin repository in .gitlin/")
     }
 }

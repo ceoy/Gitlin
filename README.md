@@ -19,4 +19,14 @@ Unzip the .zip file, put it somewhere and add `gitlin/bin` to your PATH.
 
 ## Running
 
-In order to run Gitlin, make sure `gitlin/bin` is in your PATH, then run `gitlin -h` (or `gitlin.bat -h` for more information.
+In order to run Gitlin, make sure `gitlin/bin` is in your PATH, then run `gitlin -h` for more information.
+
+## Todos / Next steps
+
+### Priority 1
+> - Add tests
+> - Add .ignore logic
+> - create object when adding
+
+### Priority 2
+> - Fix init for windows

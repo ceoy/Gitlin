@@ -13,7 +13,7 @@ build
 
 # User-specific stuff
 .idea
-
+.DS_Store
 
 # CMake
 cmake-build-*/
@@ -96,10 +96,10 @@ gradle-app.setting
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
 
+### Gitlin ###
+.gitlin/
+
 ### Gradle Patch ###
 **/build/
-
-### Gitlin ###
-.gitlin
 
 # End of https://www.gitignore.io/api/kotlin,gradle,intellij,gitlin
